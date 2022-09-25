@@ -1,0 +1,13 @@
+name: Repository Dispatch Test
+
+on:
+  repository_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: |
+          echo "${{ github.event.action }}"
+          echo "${{ github.event.client_payload.message }}"
